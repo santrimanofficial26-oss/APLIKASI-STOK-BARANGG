@@ -1,0 +1,29 @@
+{
+  "appsScriptUrl": "https://script.google.com/macros/s/AKfycbz894PrR2zsfCzbO26vUR3jPHqG4BdphXspdxvCb6CqpM9XPSO1V90CBGd_KG7Da9v3/exec",
+  "name": "Innara Craft Inventory",
+  "shortName": "Innara Inventory",
+  "title": "Innara Craft — Sistem Inventory Dekorasi",
+  "description": "Sistem inventory dekorasi wedding Innara Craft – Creative Decoration: kelola stok gudang, peminjaman barang per event, kerusakan, serta invoice & quotation dalam satu aplikasi.",
+  "keywords": [
+    "Innara Craft",
+    "Innara Craft Decoration",
+    "sistem inventory dekorasi",
+    "aplikasi stok gudang",
+    "sewa dekorasi wedding",
+    "dekorasi pernikahan Bandung",
+    "peminjaman barang event",
+    "invoice quotation dekorasi"
+  ],
+  "company": "Innara Craft – Creative Decoration",
+  "locality": "Kabupaten Bandung",
+  "region": "Jawa Barat",
+  "regionCode": "ID-JB",
+  "country": "ID",
+  "lang": "id",
+  "locale": "id_ID",
+  "themeColor": "#5C3F1F",
+  "backgroundLight": "#F1E9DE",
+  "backgroundDark": "#12100D",
+  "ogImageAlt": "Logo Innara Craft – Creative Decoration di atas foto dekorasi wedding, dengan tulisan Sistem Inventory Dekorasi",
+  "indexable": true
+}

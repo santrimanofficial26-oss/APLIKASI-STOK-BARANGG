@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="{{LANG}}" prefix="og: https://ogp.me/ns#">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <title>{{TITLE}}</title>
+
+    <!-- SEO dasar -->
+    <meta name="description" content="{{DESCRIPTION}}">
+    <meta name="keywords" content="{{KEYWORDS}}">
+    <meta name="author" content="{{COMPANY}}">
+    <meta name="publisher" content="{{COMPANY}}">
+    <meta name="robots" content="{{ROBOTS}}">
+    <meta name="googlebot" content="{{ROBOTS}}">
+    <link rel="canonical" href="{{SITE_URL}}/">
+    <link rel="alternate" hreflang="id-ID" href="{{SITE_URL}}/">
+    <link rel="alternate" hreflang="x-default" href="{{SITE_URL}}/">
+    <meta name="geo.region" content="{{REGION_CODE}}">
+    <meta name="geo.placename" content="{{LOCALITY}}">
+
+    <!-- Open Graph (WhatsApp, Facebook, Telegram, LinkedIn, Discord) -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="{{NAME}}">
+    <meta property="og:locale" content="{{LOCALE}}">
+    <meta property="og:url" content="{{SITE_URL}}/">
+    <meta property="og:title" content="{{TITLE}}">
+    <meta property="og:description" content="{{DESCRIPTION}}">
+    <meta property="og:image" content="{{OG_IMAGE}}">
+    <meta property="og:image:secure_url" content="{{OG_IMAGE}}">
+    <meta property="og:image:type" content="image/jpeg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="{{OG_IMAGE_ALT}}">
+    <link rel="image_src" href="{{OG_IMAGE}}">
+
+    <!-- Twitter / X -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="{{TITLE}}">
+    <meta name="twitter:description" content="{{DESCRIPTION}}">
+    <meta name="twitter:image" content="{{OG_IMAGE}}">
+    <meta name="twitter:image:alt" content="{{OG_IMAGE_ALT}}">
+
+    <!-- Ikon & aplikasi (Add to Home Screen) -->
+    <link rel="icon" href="/favicon.ico" sizes="48x48">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/assets/icon-192.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta name="application-name" content="{{SHORT_NAME}}">
+    <meta name="apple-mobile-web-app-title" content="{{SHORT_NAME}}">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="msapplication-TileColor" content="{{THEME}}">
+    <meta name="msapplication-TileImage" content="/assets/icon-192.png">
+    <meta name="theme-color" content="{{BG_LIGHT}}" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="{{BG_DARK}}" media="(prefers-color-scheme: dark)">
+    <meta name="color-scheme" content="light dark">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="preconnect" href="https://script.google.com">
+    <link rel="preconnect" href="https://ssl.gstatic.com" crossorigin>
+
+    <script type="application/ld+json">{{JSON_LD}}</script>
+
+    <style>
+        :root { --brand: {{THEME}}; --bg: {{BG_LIGHT}}; --kartu: #F7F3EE; --teks: #2A2016; --redup: #7A6A58; }
+        @media (prefers-color-scheme: dark) { :root { --bg: {{BG_DARK}}; --kartu: #1C1915; --teks: #F2EEE8; --redup: #9A9288; } }
+        * { box-sizing: border-box; }
+        html, body { margin: 0; height: 100%; background: var(--bg); color: var(--teks); overflow: hidden;
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; }
+        .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
+        #app { position: fixed; inset: 0; width: 100%; height: 100%; height: 100dvh; border: 0; display: block; background: var(--bg); }
+
+        /* Layar pembuka selama Apps Script dimuat */
+        #splash { position: fixed; inset: 0; z-index: 2; display: grid; place-items: center; padding: 24px; background: var(--bg);
+            transition: opacity .5s ease, visibility .5s; }
+        .siap #splash { opacity: 0; visibility: hidden; }
+        .kartu { width: min(380px, 100%); text-align: center; background: var(--kartu); border-radius: 24px; padding: 34px 28px 28px;
+            box-shadow: 0 1px 2px rgba(31, 27, 22, .05), 0 18px 50px rgba(31, 27, 22, .10); animation: naik .6s cubic-bezier(.2, .8, .2, 1) both; }
+        @keyframes naik { from { opacity: 0; transform: translateY(14px); } }
+        .kartu img { width: 210px; max-width: 80%; height: auto; display: block; margin: 0 auto 22px; }
+        @media (prefers-color-scheme: dark) { .kartu img { background: #F7F3EE; border-radius: 14px; padding: 10px 14px; } }
+        .bar { height: 4px; border-radius: 4px; background: rgba(92, 63, 31, .14); overflow: hidden; margin: 0 auto 14px; width: 70%; }
+        .bar span { display: block; height: 100%; width: 40%; border-radius: 4px; background: var(--brand); animation: geser 1.2s ease-in-out infinite; }
+        @media (prefers-color-scheme: dark) { .bar { background: rgba(255, 255, 255, .1); } .bar span { background: #B08355; } }
+        @keyframes geser { from { transform: translateX(-100%); } to { transform: translateX(250%); } }
+        .status { margin: 0; font-size: 14px; color: var(--redup); }
+        .bantuan { margin: 16px 0 0; font-size: 13px; color: var(--redup); line-height: 1.5; }
+        .bantuan a, noscript a { color: var(--brand); font-weight: 600; }
+        @media (prefers-color-scheme: dark) { .bantuan a, noscript a { color: #C2966A; } }
+        .offline-msg { display: none; }
+        .offline .offline-msg { display: block; }
+        .offline .status-normal { display: none; }
+        @media (prefers-reduced-motion: reduce) { .kartu, .bar span { animation: none; } }
+    </style>
+</head>
+<body>
+    <h1 class="sr-only">{{TITLE}}</h1>
+    <p class="sr-only">{{DESCRIPTION}}</p>
+
+    <div id="splash" role="status" aria-live="polite">
+        <div class="kartu">
+            <img src="/assets/logo.png" width="{{LOGO_W}}" height="{{LOGO_H}}" alt="{{COMPANY}}">
+            <div class="bar" aria-hidden="true"><span></span></div>
+            <p class="status status-normal">Memuat aplikasi&hellip;</p>
+            <p class="status offline-msg">Anda sedang offline. Aplikasi dimuat otomatis saat internet tersambung.</p>
+            <p class="bantuan" id="bantuan" hidden>Masih memuat? <a href="{{APP_URL}}" target="_blank" rel="noopener">Buka aplikasi langsung</a></p>
+            <noscript><p class="bantuan">JavaScript tidak aktif. <a href="{{APP_URL}}">Buka aplikasi langsung</a></p></noscript>
+        </div>
+    </div>
+
+    <iframe id="app" title="{{TITLE}}" data-src="{{APP_URL}}"
+        allow="clipboard-read; clipboard-write; fullscreen; web-share"
+        allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe>
+
+    <script src="/app.js?v={{BUILD_ID}}"></script>
+</body>
+</html>
